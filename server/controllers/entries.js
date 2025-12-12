@@ -19,6 +19,35 @@ async function show(req, res) {
     }
 }
 
+async function getRecent(req, res) {
+    try {
+        const recentEntries = await Entry.getRecent();
+        res.status(200).json(recentEntries);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+}
+
+async function getByDate(req, res) {
+    try {
+        const date = req.params.date;
+        const entries = await Entry.getByDate(date);
+        res.status(200).json(entries);
+    } catch (err) {
+        res.status(404).json({ error: err.message });
+    }
+}
+
+async function getByCategory(req, res) {
+    try {
+        const category = req.params.category;
+        const entries = await Entry.getByCategory(category);
+        res.status(200).json(entries);
+    } catch (err) {
+        res.status(404).json({ error: err.message });
+    }
+}
+
 async function create(req, res) {
     try {
         const data = req.body
@@ -52,4 +81,4 @@ async function destroy(req, res) {
     }
 }
 
-module.exports = { index, show, create, update, destroy }
+module.exports = { index, show, getRecent, getByDate, getByCategory, create, update, destroy }
