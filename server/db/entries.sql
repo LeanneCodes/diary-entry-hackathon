@@ -3,14 +3,15 @@ DROP TABLE IF EXISTS entry;
 CREATE TABLE entry (
     entry_id INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(100) NOT NULL,
-    eventTimeStamp DATETIME,
+    eventTimeStamp TIMESTAMP,
     category VARCHAR(100) NOT NULL,
     country VARCHAR(100) NOT NULL, 
-    description VARCHAR(5000) NOT NULL
+    description VARCHAR(5000) NOT NULL,
     PRIMARY KEY (entry_id)
-)
+);
 
 INSERT INTO entry (name, eventTimeStamp, category, country, description)
+VALUES
 ('USA', '2025-01-10 09:15:00', 'Weather', 'USA', 'A strong cold front moved across the Midwest, bringing heavy snowfall and gusty winds.'),
 ('Germany', '2025-01-12 14:30:00', 'Economy', 'Germany', 'The quarterly economic report showed moderate growth driven by increased manufacturing output.'),
 ('Japan', '2025-01-15 08:45:00', 'Technology', 'Japan', 'A major electronics company announced a new line of energy-efficient processors.'),
