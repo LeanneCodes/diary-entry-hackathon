@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS entry;
 
 CREATE TABLE entry (
     entry_id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100) NOT NULL,
     eventTimeStamp DATETIME,
     category VARCHAR(100) NOT NULL,
     country VARCHAR(100) NOT NULL, 
@@ -9,14 +10,14 @@ CREATE TABLE entry (
     PRIMARY KEY (entry_id)
 )
 
-INSERT INTO entry (eventTimeStamp, category, country, description)
-('2025-01-10 09:15:00', 'Weather', 'USA', 'A strong cold front moved across the Midwest, bringing heavy snowfall and gusty winds.'),
-('2025-01-12 14:30:00', 'Economy', 'Germany', 'The quarterly economic report showed moderate growth driven by increased manufacturing output.'),
-('2025-01-15 08:45:00', 'Technology', 'Japan', 'A major electronics company announced a new line of energy-efficient processors.'),
-('2025-01-18 19:20:00', 'Culture', 'France', 'The annual film festival opened with a record number of international entries.'),
-('2025-01-20 11:00:00', 'Sports', 'Brazil', 'The national football team began its training camp in preparation for the summer tournament.'),
-('2025-01-22 16:10:00', 'Environment', 'Canada', 'Researchers reported progress in restoring a protected wetland area.'),
-('2025-01-25 07:55:00', 'Health', 'Australia', 'A new public health initiative promoting nutrition was launched nationwide.'),
-('2025-01-27 13:40:00', 'Education', 'India', 'Several schools adopted a new digital learning platform to assist students in remote regions.'),
-('2025-01-29 10:25:00', 'Transportation', 'United Kingdom', 'Construction began on a major railway expansion to improve regional connectivity.'),
-('2025-02-01 18:05:00', 'Energy', 'Norway', 'An offshore wind project reached its final approval stage after environmental review.');
+INSERT INTO entry (name, eventTimeStamp, category, country, description)
+('USA', '2025-01-10 09:15:00', 'Weather', 'USA', 'A strong cold front moved across the Midwest, bringing heavy snowfall and gusty winds.'),
+('Germany', '2025-01-12 14:30:00', 'Economy', 'Germany', 'The quarterly economic report showed moderate growth driven by increased manufacturing output.'),
+('Japan', '2025-01-15 08:45:00', 'Technology', 'Japan', 'A major electronics company announced a new line of energy-efficient processors.'),
+('France', '2025-01-18 19:20:00', 'Culture', 'France', 'The annual film festival opened with a record number of international entries.'),
+('Brazil', '2025-01-20 11:00:00', 'Sports', 'Brazil', 'The national football team began its training camp in preparation for the summer tournament.'),
+('Canada', '2025-01-22 16:10:00', 'Environment', 'Canada', 'Researchers reported progress in restoring a protected wetland area.'),
+('Australia', '2025-01-25 07:55:00', 'Health', 'Australia', 'A new public health initiative promoting nutrition was launched nationwide.'),
+('India', '2025-01-27 13:40:00', 'Education', 'India', 'Several schools adopted a new digital learning platform to assist students in remote regions.'),
+('United Kingdom', '2025-01-29 10:25:00', 'Transportation', 'United Kingdom', 'Construction began on a major railway expansion to improve regional connectivity.'),
+('Norway', '2025-02-01 18:05:00', 'Energy', 'Norway', 'An offshore wind project reached its final approval stage after environmental review.');
