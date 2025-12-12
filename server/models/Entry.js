@@ -28,6 +28,33 @@ class Entry {
     return new Entry(response.rows[0]);
 }
 
+    static async getRecent() {
+        const response = await db.query('SELECT * FROM entry ORDER BY eventTimeStamp DESC LIMIT 1')
+        if(response.rows.length === 0){
+            throw new Error('Unable to display the last entry')
+        }
+        return new Entry(response.rows[0])
+    }
+
+    static async getByDate(eventTimeStamp){
+        const response = await db.query('SELECT * FROM entry WHERE eventTimeStamp = $1;', [eventTimeStamp])
+     if(response.rows.length === 0){
+        throw new Error('Unable to find entry')
+    }
+    return new Entry(response.rows[0]);
+    }
+
+    static async getByCategory(category){
+        const response = await db.query('SELECT * FROM entry WHERE category = $1;', [category])
+     if(response.rows.length === 0){
+        throw new Error(`Unable to find entries for ${category}`)
+    }
+    return response.rows.map(c => new Entry(c));
+    }
+
+
+
+
     static async create(data) {
         const {name, eventTimeStamp, category, country, description} = data;
         const existingEntry = await db.query(
