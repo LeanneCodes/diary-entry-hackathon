@@ -1,6 +1,5 @@
 # diary-entry-hackathon
-# Debug assignment 2
-# Snack API
+
 ## Overview
 
 This is a CRUD Apllication for your persona;travel blog. It allows you to have your own travel diary by adding, removing, viewing by date, category and name. 
@@ -24,19 +23,23 @@ This is a CRUD Apllication for your persona;travel blog. It allows you to have y
 
 
 ## API Endpoints
-| Method | Endpoint     | Description  
-|--------|--------------|--------------------|
-| GET    | /entries      | Retrieves all travel entries   |
-| GET    | /entries/name  | Retrieves a single entry by name of the country    |
-| POST   | /entries/       | Creates a new snack           |
-| DELETE | /snacks/:id     | Deletes a snack |
-| GET    | /snacks/top     |Shows the most voted snack
+
+| Method | Endpoints                         | Description  
+|--------|----------------------------------|----------------------------------------------------|
+| GET    | /entries                         | Retrieves all travel entries                       |
+| GET    | /entries/name                    | Retrieves a single entry by name of the country    |
+| GET    | /entries/category/<destination>  | Retrieve entries by destination                    |
+| GET    | /entries/date/<eventTimeStamp>   | Retrive entries by date                           |
+| POST   | /entries/                        | Creates a new entry                               |
+| DELETE | /entries/name                    | Deletes an entry                                  |
+| PATCH  | /entries/name                    | Make changes to entries                           
 
 ## Future features
-- the application will be deployed using render 
-- the application will have a beautiful front end that will allow user to interract in a more fun way using a browser
-- there will be more options for the user: ability to group the snacks, create own favourite list, create ideas for snacks that don't yet exist
-- the application has a dockerfile- in the future instructions will be added on how to build a custom image and run a container based on that image
-
+- allow for commenting from other users
+- allow to add images
+- create a plan for future adventures
+- add exra information about visiting coutries
+- allow other users to create recommendations and add their own stories
 
 ## Bugs
+There are no bugs in the application at the moment
