@@ -34,6 +34,8 @@ This is a CRUD Apllication for your persona;travel blog. It allows you to have y
 | DELETE | /entries/name                    | Deletes an entry                                  |
 | PATCH  | /entries/name                    | Make changes to entries                           
 
+![home-page](/public/Capture.PNG)
+
 ## Future features
 - allow for commenting from other users
 - allow to add images
