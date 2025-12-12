@@ -55,11 +55,13 @@ class Entry {
 
 async update(data) {
         const response = await db.query("UPDATE entry SET name = $1, eventTimeStamp = $2, category = $3, country = $4, description = $5 WHERE name = $6 RETURNING*;",
-            [ data.capital, this.name ]);
-        if (response.rows.length != 1) {
-            throw new Error("Unable to update capital.")
+            [ data.name, data.eventTimeStamp, data.category, data.country, data.description, this.name ]);
+        if (response.rows.length !== 1) {
+            throw new Error("Unable to update the entry")
         }
-        return new Country(response.rows[0]);
+        return new Entry(response.rows[0]);
     }
 
 }
+
+module.exports = Entry;
