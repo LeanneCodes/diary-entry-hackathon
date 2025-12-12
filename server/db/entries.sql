@@ -5,11 +5,11 @@ CREATE TABLE entry (
     eventTimeStamp DATETIME,
     category VARCHAR(100) NOT NULL,
     country VARCHAR(100) NOT NULL, 
-    text VARCHAR(5000) NOT NULL
+    description VARCHAR(5000) NOT NULL
     PRIMARY KEY (entry_id)
 )
 
-INSERT INTO entry (entry_id, eventTimeStamp, category, country, text)
+INSERT INTO entry (eventTimeStamp, category, country, description)
 ('2025-01-10 09:15:00', 'Weather', 'USA', 'A strong cold front moved across the Midwest, bringing heavy snowfall and gusty winds.'),
 ('2025-01-12 14:30:00', 'Economy', 'Germany', 'The quarterly economic report showed moderate growth driven by increased manufacturing output.'),
 ('2025-01-15 08:45:00', 'Technology', 'Japan', 'A major electronics company announced a new line of energy-efficient processors.'),
